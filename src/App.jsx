@@ -3,7 +3,6 @@ import { TodoSearch } from './TodoSearch.jsx';
 import { TodoList } from './TodoList.jsx';
 import { TodoItem } from './TodoItem.jsx';
 import { CreateTodoButton } from './CreateTodoButton';
-import './App.css';
 
 const defaultTodos = [
   {id: Math.floor(Math.random() * 1000000), text: 'Estudiar MongoDB', completed: true},
