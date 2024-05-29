@@ -4,6 +4,13 @@ import { TodoList } from './TodoList.jsx';
 import { TodoItem } from './TodoItem.jsx';
 import { CreateTodoButton } from './CreateTodoButton';
 import './App.css';
+
+const defaultTodos = [
+  {id: Math.floor(Math.random() * 1000000), text: 'Estudiar MongoDB', completed: true},
+  {id: Math.floor(Math.random() * 1000000), text: 'Estudiar GraphQL', completed: false},
+  {id: Math.floor(Math.random() * 1000000), text: 'Estudiar React', completed: false},
+  {id: Math.floor(Math.random() * 1000000), text: 'Estudiar JavaScript', completed: false}, 
+]
 function App() {
   return (
     <>
@@ -11,9 +18,13 @@ function App() {
       <TodoSearch />
 
       <TodoList>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {defaultTodos.map(todo => (
+          <TodoItem 
+          key={todo.id} 
+          text={todo.text}
+          completed={todo.completed}
+          />
+        ))}
       </TodoList>
 
         <CreateTodoButton/>
